@@ -1,1 +1,0 @@
-# FSD-college-lab
