@@ -1,11 +1,13 @@
-function Car(){
+function Car(props){
   return(
     <>
     <h1>THIS IS COMPONENT EXAMPLE</h1>
-    <button>First</button>
-    <button>Second</button>
-    <button>Third</button>
+    <h2 style ={{color:props.color}}>This is {props.color} {props.brand}</h2>
+    <button>Submit</button>
+    <button>Click</button>
+    <button>Check</button>
     </>
   )
 }
+
 export default Car;
