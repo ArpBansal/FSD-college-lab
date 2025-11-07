@@ -1,8 +1,11 @@
 import "./App.css"
 import Card from "./card"
+import Menu from "./menu";
 
 function App() {
   return(
+    <>
+    <Menu/>
     <div className="card-container">
       <Card
       image="https://marketplace.canva.com/EAGUhHGuQOg/1/0/1003w/canva-orange-and-blue-anime-cartoon-illustrative-novel-story-book-cover-WZE2VIj5AVQ.jpg"
@@ -20,6 +23,7 @@ function App() {
       description="Master the language behind react"
       />
     </div>
+    </>
   )
 }
 export default App;
