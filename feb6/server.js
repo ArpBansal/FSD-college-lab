@@ -1,5 +1,7 @@
 const http = require('http');
 const fs = require('fs');
+const { compileFunction } = require('vm');
+const { cat } = require('@huggingface/transformers');
 
 const server = http.createServer((req, res) => {
     if (req.url === '/') {
@@ -32,3 +34,26 @@ const port = 3000;
 server.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
+
+async function readWithPromisify() {
+    try{
+        const data = await fs.readFileSync('file.txt', 'utf-8');
+        console.log(data);
+    } catch (err) {
+        console.error('Error reading file:', err);
+    }
+}
+
+readWithPromisify();
+
+async function writeFileExample() {
+    try {
+        const content = 'This is some sample text to write to the file.';
+        await fs.promises.writeFile('output.txt', content, 'utf-8');
+        console.log('File written successfully.');
+    } catch (err) {
+        console.error('Error writing file:', err);
+    }
+}
+
+writeFileExample();
